@@ -1,0 +1,26 @@
+settings =
+{
+	orientation = {
+		default = "portrait",
+		supported = { "portrait" }
+	},
+
+	iphone =
+	{
+		xcassets = "Images.xcassets",
+		plist =
+		{
+			UILaunchStoryboardName = "LaunchScreen",
+			CFBundleIdentifier = "com.appodeal.testing",
+			NSAppTransportSecurity = { NSAllowsArbitraryLoads=true },
+		}
+	},
+
+	plugins =
+	{
+		["plugin.inMobi"] =
+		{
+			publisherId = "com.coronalabs"
+		}
+	}
+}

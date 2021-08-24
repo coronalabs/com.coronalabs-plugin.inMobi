@@ -1,0 +1,48 @@
+apply plugin: "com.android.library"
+
+def manifest = new XmlSlurper().parse(file("src/main/AndroidManifest.xml"))
+def pluginName = manifest.@package.text()
+
+// Define paths used throughout the build process
+def coronaEnterpriseDir = "$rootDir/CoronaEnterprise"
+def coronaEnterpriseAndroidLibDir = "$coronaEnterpriseDir/Corona/android/lib/Corona"
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            //proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+}
+
+task exportPluginJar (type: Copy) {
+    from "$buildDir/intermediates/intermediate-jars/release/"
+    into "$buildDir/outputs/jar"
+    include "classes.jar"
+    rename "classes.jar", "${pluginName}.jar"
+
+    doFirst {
+        println "== exportPluginJar =="
+    }
+}
+
+tasks.withType(JavaCompile) {
+    compileTask -> compileTask.dependsOn("exportPluginJar")
+}
+
+dependencies {
+    implementation fileTree(dir: "$coronaEnterpriseAndroidLibDir/libs", include: "*.jar")
+    implementation "com.google.android.gms:play-services-base:11.4.2"
+    implementation fileTree(dir: "libs", include: "*.jar")
+}

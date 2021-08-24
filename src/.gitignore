@@ -1,0 +1,11 @@
+sharedCodeGoesHere.txt
+libinMobiPlugin.a
+ios/build
+android/app/src/main/assets
+android/app/src/main/jniLibs
+ios/inMobi_Corona.xcodeproj/project.xcworkspace/xcuserdata
+ios/inMobi_Corona.xcodeproj/xcuserdata
+Iconr
+.sync/ID
+.sync/IgnoreList
+.sync/StreamsList
