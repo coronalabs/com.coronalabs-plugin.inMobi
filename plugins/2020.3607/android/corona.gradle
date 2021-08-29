@@ -1,0 +1,3 @@
+dependencies {
+    implementation 'com.inmobi.monetization:inmobi-ads:9.2.0'
+}

@@ -16,7 +16,6 @@
 #import "CoronaLua.h"
 #import "CoronaLuaIOS.h"
 #import "CoronaLibrary.h"
-#import "CoronaBeacon.h"
 
 // Plugin specific imports
 #import "InMobiLibrary.h"
@@ -821,8 +820,6 @@ InMobiLibrary::load(lua_State *L)
     // If the Ad hasn't already been loaded
     if (![inMobiAds objectForKey:UTF8Str(placementId)])
     {
-      // Send the device data to the beacon endpoint
-      CoronaBeacon::sendDeviceDataToBeacon(L, kName, kVersion, CoronaBeacon::REQUEST, placementId, perkBeaconListener);
       // Get the app view controller
       UIViewController *appViewController = library.GetAppViewController();
       // Create a dictionary for this Ad
@@ -1116,8 +1113,6 @@ InMobiLibrary::show(lua_State *L)
             CoronaLuaDispatchEvent(L, library.GetListener(), 1);
           }];
           
-          // Send the device data to the beacon endpoint
-          CoronaBeacon::sendDeviceDataToBeacon(L, kName, kVersion, CoronaBeacon::IMPRESSION, placementId, perkBeaconListener);
         }
         // Show an interstitial Ad
         else if ([adUnitType isEqualToString:INTERSTITIAL_AD_NAME])
@@ -1436,8 +1431,6 @@ InMobiLibrary::hide(lua_State *L)
   // Dispatch the event
   [self dispatchLuaEvent:DISPLAYED_EVENT type:INTERSTITIAL_AD_NAME placementId:placementId data:nil error:nil];
   
-  // Send the device data to the beacon endpoint
-  CoronaBeacon::sendDeviceDataToBeacon(self.fRuntime.L, InMobiLibrary::kName, InMobiLibrary::kVersion, CoronaBeacon::IMPRESSION, [placementId UTF8String], perkBeaconListener);
 }
 
 // Notifies the delegate that the interstitial has failed to present with some error

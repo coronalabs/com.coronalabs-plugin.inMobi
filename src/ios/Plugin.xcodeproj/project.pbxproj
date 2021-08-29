@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30DA24431CAF2BE400D7E37F /* InMobiLibrary.mm in Sources */ = {isa = PBXBuildFile; fileRef = 30DA24421CAF2BE400D7E37F /* InMobiLibrary.mm */; };
-		3778D1241DEDB919001B7247 /* InMobiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3778D1231DEDB919001B7247 /* InMobiSDK.framework */; };
+		DB6F198926D6DB5500570E1C /* InMobiLibrary.mm in Sources */ = {isa = PBXBuildFile; fileRef = DB6F198726D6DB5500570E1C /* InMobiLibrary.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,11 +23,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		30DA24411CAF2BE400D7E37F /* InMobiLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InMobiLibrary.h; path = Plugin/InMobiLibrary.h; sourceTree = "<group>"; };
-		30DA24421CAF2BE400D7E37F /* InMobiLibrary.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = InMobiLibrary.mm; path = Plugin/InMobiLibrary.mm; sourceTree = "<group>"; };
-		3778D1231DEDB919001B7247 /* InMobiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InMobiSDK.framework; path = libs/InMobiSDK.framework; sourceTree = SOURCE_ROOT; };
-		378FA31F1E47848D00C25CF8 /* CoronaBeacon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CoronaBeacon.h; path = libs/headers/CoronaBeacon.h; sourceTree = "<group>"; };
-		A4E253B6166D6FB300DCDC2C /* libInMobiPlugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInMobiPlugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4E253B6166D6FB300DCDC2C /* libplugin_inmobi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libplugin_inmobi.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB6F198726D6DB5500570E1C /* InMobiLibrary.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = InMobiLibrary.mm; path = Plugin/InMobiLibrary.mm; sourceTree = "<group>"; };
+		DB6F198826D6DB5500570E1C /* InMobiLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InMobiLibrary.h; path = Plugin/InMobiLibrary.h; sourceTree = "<group>"; };
+		F572F81A1EE0705B001BC814 /* CoronaNative.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CoronaNative.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,44 +34,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3778D1241DEDB919001B7247 /* InMobiSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		30581DE31CBDBE0A00187572 /* Corona Beacon */ = {
+		A447B609165D72A6009EA762 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				378FA31F1E47848D00C25CF8 /* CoronaBeacon.h */,
+				DB6F198826D6DB5500570E1C /* InMobiLibrary.h */,
+				DB6F198726D6DB5500570E1C /* InMobiLibrary.mm */,
 			);
-			name = "Corona Beacon";
-			sourceTree = "<group>";
-		};
-		30D457C21A6AF362001439CE /* InMobi */ = {
-			isa = PBXGroup;
-			children = (
-				3778D1231DEDB919001B7247 /* InMobiSDK.framework */,
-			);
-			name = InMobi;
-			sourceTree = "<group>";
-		};
-		A447B609165D72A6009EA762 /* Plugin Library */ = {
-			isa = PBXGroup;
-			children = (
-				30DA24411CAF2BE400D7E37F /* InMobiLibrary.h */,
-				30DA24421CAF2BE400D7E37F /* InMobiLibrary.mm */,
-			);
-			name = "Plugin Library";
+			name = Source;
 			sourceTree = "<group>";
 		};
 		A484110E15114F700074BD57 = {
 			isa = PBXGroup;
 			children = (
-				30581DE31CBDBE0A00187572 /* Corona Beacon */,
-				30D457C21A6AF362001439CE /* InMobi */,
-				A447B609165D72A6009EA762 /* Plugin Library */,
+				A447B609165D72A6009EA762 /* Source */,
+				F54A40C01EE083A300AF417D /* CoronaNative */,
 				A484111A15114F700074BD57 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,18 +61,27 @@
 		A484111A15114F700074BD57 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4E253B6166D6FB300DCDC2C /* libInMobiPlugin.a */,
+				A4E253B6166D6FB300DCDC2C /* libplugin_inmobi.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F54A40C01EE083A300AF417D /* CoronaNative */ = {
+			isa = PBXGroup;
+			children = (
+				F572F81A1EE0705B001BC814 /* CoronaNative.xcconfig */,
+			);
+			name = CoronaNative;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A4E253B5166D6FB300DCDC2C /* InMobiPlugin */ = {
+		A4E253B5166D6FB300DCDC2C /* plugin_inmobi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "InMobiPlugin" */;
+			buildConfigurationList = A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "plugin_inmobi" */;
 			buildPhases = (
+				C2E70B581EE9F110006E4570 /* Corona Native */,
 				A4E253B2166D6FB300DCDC2C /* Sources */,
 				A4E253B3166D6FB300DCDC2C /* Frameworks */,
 				A4E253B4166D6FB300DCDC2C /* CopyFiles */,
@@ -101,9 +90,9 @@
 			);
 			dependencies = (
 			);
-			name = InMobiPlugin;
+			name = plugin_inmobi;
 			productName = plugin_library;
-			productReference = A4E253B6166D6FB300DCDC2C /* libInMobiPlugin.a */;
+			productReference = A4E253B6166D6FB300DCDC2C /* libplugin_inmobi.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -112,13 +101,14 @@
 		A484111015114F700074BD57 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0820;
 			};
 			buildConfigurationList = A484111315114F700074BD57 /* Build configuration list for PBXProject "Plugin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = A484110E15114F700074BD57;
@@ -126,17 +116,35 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A4E253B5166D6FB300DCDC2C /* InMobiPlugin */,
+				A4E253B5166D6FB300DCDC2C /* plugin_inmobi */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C2E70B581EE9F110006E4570 /* Corona Native */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Corona Native";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# echo \"CORONA_ROOT: ${CORONA_ROOT}\"\nif [ ! -d \"${CORONA_ROOT}\" ]\nthen\n    echo \"error: Corona Native has not been setup.  Run 'Native/SetupCoronaNative.app' in your Corona install to set it up\" >&2\n\n    exit 1\nelse\n    echo \"Building with Corona Native from $(readlink \"${CORONA_ROOT}\")\"\nfi";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A4E253B2166D6FB300DCDC2C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30DA24431CAF2BE400D7E37F /* InMobiLibrary.mm in Sources */,
+				DB6F198926D6DB5500570E1C /* InMobiLibrary.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,21 +153,17 @@
 /* Begin XCBuildConfiguration section */
 		A484114015114F700074BD57 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F572F81A1EE0705B001BC814 /* CoronaNative.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BITCODE_GENERATION_MODE = bitcode;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -167,6 +171,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -175,6 +180,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -186,34 +192,31 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/CoronaEnterprise/Corona/shared/include/Corona ${SRCROOT}/CoronaEnterprise/Corona/shared/include/lua ${SRCROOT}/CoronaEnterprise/Corona/ios/include/Corona ${PROJECT_DIR}/AppFireworks ${PROJECT_DIR}/Leadbolt";
 			};
 			name = Debug;
 		};
 		A484114115114F700074BD57 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F572F81A1EE0705B001BC814 /* CoronaNative.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BITCODE_GENERATION_MODE = bitcode;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -222,10 +225,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/CoronaEnterprise/Corona/shared/include/Corona ${SRCROOT}/CoronaEnterprise/Corona/shared/include/lua ${SRCROOT}/CoronaEnterprise/Corona/ios/include/Corona ${PROJECT_DIR}/AppFireworks ${PROJECT_DIR}/Leadbolt";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -236,21 +239,12 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DSTROOT = /tmp/plugin_library.dst;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/libs",
-				);
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/INSERT_PATH_HERE",
-					"$(PROJECT_DIR)/inMobi",
-				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/CoronaEnterprise/Corona/shared/include/Corona ${SRCROOT}/CoronaEnterprise/Corona/shared/include/lua ${SRCROOT}/CoronaEnterprise/Corona/ios/include/Corona $(SRCROOT)/AppFireworks $(SRCROOT)/Leadbolt";
 			};
 			name = Debug;
 		};
@@ -260,21 +254,12 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DSTROOT = /tmp/plugin_library.dst;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/libs",
-				);
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/INSERT_PATH_HERE",
-					"$(PROJECT_DIR)/inMobi",
-				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/CoronaEnterprise/Corona/shared/include/Corona ${SRCROOT}/CoronaEnterprise/Corona/shared/include/lua ${SRCROOT}/CoronaEnterprise/Corona/ios/include/Corona $(SRCROOT)/AppFireworks $(SRCROOT)/Leadbolt";
 			};
 			name = Release;
 		};
@@ -290,7 +275,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "InMobiPlugin" */ = {
+		A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "plugin_inmobi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4E253C0166D6FB300DCDC2C /* Debug */,
